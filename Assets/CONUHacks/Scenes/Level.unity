@@ -458,7 +458,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1114985380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cde3903c79dee45ccb64c95e1265efcc, type: 3}
+  m_Script: {fileID: 11500000, guid: efa6c05ca92dc6a4aa58b95aec76aeb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirstPersonCamera: {fileID: 434156258}
@@ -466,7 +466,6 @@ MonoBehaviour:
     type: 3}
   ManipulatorPrefab: {fileID: 1122865395318488, guid: 24556cd4924884d9aaa3d80135c8021d,
     type: 3}
-  player: {fileID: 0}
 --- !u!4 &1114985382
 Transform:
   m_ObjectHideFlags: 0

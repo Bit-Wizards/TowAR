@@ -4,32 +4,34 @@ using UnityEngine;
 
 public class Minion : MonoBehaviour
 {
-    [SerializeField]
     private float health = 100;
-    [SerializeField]
     private float speed = 2;
-    [SerializeField]
-    private int teamID = 0;
+    public int teamID = 0;
 
     public GameObject[] Enemy_Team;
 
     GameObject bestTarget = null;
     // Start is called before the first frame update
 
+
+    void Awake()
+    {
+        AssignTag(teamID);
+    }
+    
     public Minion()
     {
-        this.AssignTag(teamID);
     }
 
     private void AssignTag(int team)
     {
         if (team == 0)
         {
-            this.tag = "Red_Team";
+            gameObject.tag = "Red_Team";
         }
         else if (team == 1)
         {
-            this.tag = "Blue_Team";
+            gameObject.tag = "Blue_Team";
         }
     }
 
@@ -37,7 +39,7 @@ public class Minion : MonoBehaviour
     {
         if (Enemy_Team.Length <= 0)
         {
-            Enemy_Team = (this.tag == "Blue_Team") ? GameObject.FindGameObjectsWithTag("Red_Team") : GameObject.FindGameObjectsWithTag("Blue_Team");
+            Enemy_Team = (gameObject.tag == "Blue_Team") ? GameObject.FindGameObjectsWithTag("Red_Team") : GameObject.FindGameObjectsWithTag("Blue_Team");
             Debug.Log("found");
         }
         float closestDistanceSqr = Mathf.Infinity;
