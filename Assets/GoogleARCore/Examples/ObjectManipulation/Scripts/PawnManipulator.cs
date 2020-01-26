@@ -96,7 +96,7 @@ namespace GoogleARCore.Examples.ObjectManipulation
                 }
                 else
                 {
-                    if (player.GetComponent<PlayerHandler>().CanAffordMana())
+                    if (player.GetComponent<PlayerHandler>().CanAffordMana()) // && inBounds(gesture);
                     {
                         // Instantiate game object at the hit pose.
                         var gameObject = Instantiate(PawnPrefab, hit.Pose.position, hit.Pose.rotation);
@@ -128,5 +128,13 @@ namespace GoogleARCore.Examples.ObjectManipulation
                 }
             }
         }
+
+
+        /*  private bool inBounds(TapGesture gesture) 
+         *  {
+         *       CHECK TO SEE IF IN SPAWNING BOUNDS
+         *       return true/false;
+         *  }
+         */
     }
 }
