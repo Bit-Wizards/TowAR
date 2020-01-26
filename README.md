@@ -15,3 +15,6 @@
 
 #### APK FILE
 [Towar PRE-ALPHA 0.9.apk](https://github.com/Bit-Wizards/CONUHacks/releases)
+
+#### Presentation & Video
+[Google Slides](https://docs.google.com/presentation/d/1tu_0AphmEEGAodwgMMOa0Du9u6jqqwJ4-aZllJj6dGQ/edit?usp=sharing)
