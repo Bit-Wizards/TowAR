@@ -1,4 +1,4 @@
-# Open-source Augmented Reality Game: TowAR
+# Open-Source Augmented Reality Game: TowAR
 ![TowAR](https://i.imgur.com/FMdV13C.png)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ## Dependencies:
