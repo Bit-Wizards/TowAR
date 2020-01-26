@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GoogleARCore/Examples/ObjectManipulation/Scenes/ObjectManipulation.unity
-    guid: 9dba7e74f4d2b410f90b920f80528d44
+    path: Assets/CONUHacks/Scenes/Battlegrounds.unity
+    guid: 27655fea46c910b4eac9f433df5dd922
   m_configObjects: {}
