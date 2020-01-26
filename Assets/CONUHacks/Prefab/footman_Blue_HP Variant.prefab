@@ -14,7 +14,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &922352250
 BoxCollider:
@@ -27,8 +27,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.6902497, z: 2}
-  m_Center: {x: 0, y: 0.845123, z: 0}
+  m_Size: {x: 1.4, y: 2, z: 1.4}
+  m_Center: {x: 0, y: 1.179255, z: 0}
 --- !u!114 &922352249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 1161219451914649043, guid: 116768ee3d0a6e84d950efb229ac6dbd,
         type: 3}
       propertyPath: m_Name
-      value: footman_Blue_HP
+      value: footman_Blue_HP Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1161219451914649043, guid: 116768ee3d0a6e84d950efb229ac6dbd,
         type: 3}
