@@ -36,6 +36,8 @@ public class Soilder : MonoBehaviour
 
     float nextActionTime = 0.0f;
     float period = 6.0f;
+    float nextActionTime2 = 0.0f;
+    float period2 = 20.0f;
 
     // Update is called once per frame
     void Update()
@@ -45,6 +47,11 @@ public class Soilder : MonoBehaviour
         {
             nextActionTime += period;
             targetedEnemy = FindClosestEnemy();
+        }
+        if (Time.time > nextActionTime2)
+        {
+            nextActionTime2 += period;
+            dead = true;
         }
         if (eneimiesDead)
         {

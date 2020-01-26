@@ -2235,14 +2235,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1951240323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cde3903c79dee45ccb64c95e1265efcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e6e99ce806262438fdadfdb7a13bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirstPersonCamera: {fileID: 1309211820}
-  PawnPrefab: {fileID: 185934, guid: c5bad295ed8f6754e9bd894fae5183f7, type: 3}
+  PawnPrefab: {fileID: 9107783246817636496, guid: f45e07a4d566c044fb6cf674b22a7431,
+    type: 3}
   ManipulatorPrefab: {fileID: 1122865395318488, guid: 24556cd4924884d9aaa3d80135c8021d,
     type: 3}
   player: {fileID: 2095262096}
+  map: {fileID: 4393604089959226139, guid: 17b76e1d2f0cd164d8606cb8173b2670, type: 3}
+  lightSolider: {fileID: 9107783246817636496, guid: f45e07a4d566c044fb6cf674b22a7431,
+    type: 3}
+  hasHadFirstSuccessTap: 0
 --- !u!4 &1951240325
 Transform:
   m_ObjectHideFlags: 0
@@ -2287,11 +2292,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawnGeneratorComp: {fileID: 1951240323}
-  SoldierLightPrefab: {fileID: 1161219451914649043, guid: 116768ee3d0a6e84d950efb229ac6dbd,
+  SoldierLightPrefab: {fileID: 9107783246817636496, guid: f45e07a4d566c044fb6cf674b22a7431,
     type: 3}
-  SoldierHeavyPrefab: {fileID: 7971408670458703087, guid: b75816b0884394647921c7444e6a54b0,
+  SoldierHeavyPrefab: {fileID: 7529582399033195244, guid: b874e17d51915c145940a1d913bc6a32,
     type: 3}
-  SoldierArcherPrefab: {fileID: 3813320116476949067, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
+  SoldierArcherPrefab: {fileID: 9107783246817636496, guid: f45e07a4d566c044fb6cf674b22a7431,
     type: 3}
 --- !u!4 &2095262098
 Transform:

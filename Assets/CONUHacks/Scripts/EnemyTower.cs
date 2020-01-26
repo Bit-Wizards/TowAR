@@ -39,6 +39,11 @@ public class EnemyTower : MonoBehaviour
         }
     }
 
+    public float GetHealth()
+    {
+        return health;
+    }
+
     public void ApplyDamage(float damage)
     {
         health -= damage * Time.deltaTime;

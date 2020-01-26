@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 69e6e99ce806262438fdadfdb7a13bee
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - FirstPersonCamera: {instanceID: 0}
+  - PawnPrefab: {instanceID: 0}
+  - ManipulatorPrefab: {instanceID: 0}
+  - player: {instanceID: 0}
+  - map: {fileID: 4393604089959226139, guid: 17b76e1d2f0cd164d8606cb8173b2670, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

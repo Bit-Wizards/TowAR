@@ -9,6 +9,11 @@ TagManager:
   - Red_Team
   - Blue_Tower
   - Red_Tower
+  - Player_Tower
+  - Enemy_Tower
+  - Floor
+  - Player_Spawn
+  - Enemy_Spawn
   layers:
   - Default
   - TransparentFX

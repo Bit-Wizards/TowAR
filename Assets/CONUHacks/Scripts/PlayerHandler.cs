@@ -22,6 +22,10 @@ public class PlayerHandler : MonoBehaviour
 
     private float manaCost;
 
+    private GameObject playerSpawn;
+
+    private GameObject playerTower;
+
     private enum SoilderSelectType
     {
         SOLDIER_LIGHT,
@@ -48,34 +52,55 @@ public class PlayerHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //set player spawn
+        playerSpawn = GameObject.FindGameObjectWithTag("Player_Spawn");
+        //set player health to tower health
+        playerTower = GameObject.FindGameObjectWithTag("Blue_Tower");
+        //currentHealth = playerTower.GetComponent<EnemyTower>().GetHealth() / 100.0f;
     }
 
     public void SoilderLightBtnClick()
     {
         currentSelectedSoilder = (int)SoilderSelectType.SOLDIER_LIGHT;
-        pawnGeneratorComp.GetComponent<PawnManipulator>().PawnPrefab = SoldierLightPrefab;
         manaCost = 2.5f / 100;//deduct mana
+        /*if (CanAffordMana())
+        {
+            Instantiate(SoldierLightPrefab, playerSpawn.gameObject.GetComponent<Transform>().position, playerSpawn.gameObject.GetComponent<Transform>().rotation);
+            DeductMana();
+        }*/
+            pawnGeneratorComp.GetComponent<PawnManipulator>().PawnPrefab = SoldierLightPrefab;
     }
 
     public void SoilderHeavyBtnClick()
     {
         currentSelectedSoilder = (int)SoilderSelectType.SOLDIER_HEAVY;
-        pawnGeneratorComp.GetComponent<PawnManipulator>().PawnPrefab = SoldierHeavyPrefab;
         manaCost = 5.0f / 100;//deduct mana
+       /* if (CanAffordMana())
+        {
+            Instantiate(SoldierHeavyPrefab, playerSpawn.gameObject.GetComponent<Transform>().position, playerSpawn.gameObject.GetComponent<Transform>().rotation);
+            DeductMana();
+        }*/
+            pawnGeneratorComp.GetComponent<PawnManipulator>().PawnPrefab = SoldierHeavyPrefab;
+       
     }
 
     public void SoilderArcherBtnClick()
     {
         currentSelectedSoilder = (int)SoilderSelectType.SOLDIER_ARCHER;
+
+        manaCost = 7.5f / 100;//deduct mana
+        /*if (CanAffordMana())
+        {
+            Instantiate(SoldierHeavyPrefab, playerSpawn.gameObject.GetComponent<Transform>().position, playerSpawn.gameObject.GetComponent<Transform>().rotation);
+            DeductMana();
+        }*/
         pawnGeneratorComp.GetComponent<PawnManipulator>().PawnPrefab = SoldierArcherPrefab;
-        manaCost = 7.5f/ 100;//deduct mana
     }
 
 
     public float GetMana()
     {
-        return currentMana;
+        return currentMana * 100.0f;
     }
 
     public float GetHealth()
@@ -103,5 +128,15 @@ public class PlayerHandler : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void SetHealth(float health)
+    {
+        this.currentHealth = health;
+    }
+
+    public void SetMana(float mana)
+    {
+        currentMana = mana;
     }
 }
