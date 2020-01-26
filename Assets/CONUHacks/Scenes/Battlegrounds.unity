@@ -1079,7 +1079,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0252c4a0dd1f6554b9f1aff3e1d0fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soilderBlueBtn: {fileID: 0}
+  pawnGeneratorComp: {fileID: 1951240323}
+  SoldierBluePrefab: {fileID: 1161219451914649043, guid: 116768ee3d0a6e84d950efb229ac6dbd,
+    type: 3}
+  SoldierRedPrefab: {fileID: 7971408670458703087, guid: b75816b0884394647921c7444e6a54b0,
+    type: 3}
 --- !u!4 &2095262098
 Transform:
   m_ObjectHideFlags: 0

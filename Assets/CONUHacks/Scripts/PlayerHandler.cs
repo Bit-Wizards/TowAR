@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GoogleARCore.Examples.ObjectManipulation;
+
 
 public class PlayerHandler : MonoBehaviour
 {
-    public Button soilderBlueBtn; 
+
+    //Pawn Generator Component
+    public GameObject pawnGeneratorComp;
+
+    //Soilder Asset Prefabs TODO: change once chris gives us his prefabs
+    public GameObject SoldierBluePrefab;
+    public GameObject SoldierRedPrefab;
 
     private enum SoilderSelectType
     {
@@ -21,6 +29,11 @@ public class PlayerHandler : MonoBehaviour
         currentSelectedSoilder = (int) SoilderSelectType.SOLDIER_BLUE;
     }
 
+    void Awake()
+    {
+        pawnGeneratorComp.GetComponent<PawnManipulator>().PawnPrefab = SoldierBluePrefab;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,10 +43,12 @@ public class PlayerHandler : MonoBehaviour
     public void SoilderBlueBtnClick()
     {
         currentSelectedSoilder = (int)SoilderSelectType.SOLDIER_BLUE;
+        Debug.Log("Blue");
     }
 
     public void SoilderRedBtnClick()
     {
         currentSelectedSoilder = (int)SoilderSelectType.SOLDIER_RED;
+        Debug.Log("Red");
     }
 }
