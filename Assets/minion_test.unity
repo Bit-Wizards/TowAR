@@ -223,53 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780ed8b9bd23a12c9a6d6a6eca3ea1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1379782915 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1655881402}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1379782916
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379782915}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
---- !u!65 &1379782917
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379782915}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.294645, y: 2, z: 1.8640735}
-  m_Center: {x: -0.07835888, y: 1.179255, z: -0.090896}
---- !u!114 &1379782918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379782915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54c2b58dc58afd7499464f1acc37c9be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1458021153
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +701,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.6103585
       objectReference: {fileID: 0}
+    - target: {fileID: 7507412225301108172, guid: 3dcce83efb308cab19e94ec2700644f5,
+        type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dcce83efb308cab19e94ec2700644f5, type: 3}
 --- !u!1001 &6998127605544625484
@@ -786,6 +744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.20712912
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913906544915373609, guid: 60282febfafeffc179aa1beba2c20afd,
+        type: 3}
+      propertyPath: m_Mass
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6998127604700282774, guid: 60282febfafeffc179aa1beba2c20afd,
         type: 3}

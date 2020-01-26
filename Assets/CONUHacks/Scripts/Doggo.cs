@@ -11,7 +11,15 @@ public class Doggo : Soilder
         FindEnemyTeam();
         dead = false;
         health = 85; //inital health
+        SetColor();
 
+    }
+    protected void SetColor()
+    {
+        if (gameObject.tag == "Red_Team")
+        {
+            gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        }
     }
     new private void Attack()
     {
