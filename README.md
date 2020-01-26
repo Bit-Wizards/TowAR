@@ -1,4 +1,4 @@
-# Opensource Augmented Reality Game: TowAR
+# Open-source Augmented Reality Game: TowAR
 ![TowAR](https://i.imgur.com/FMdV13C.png)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ## Dependencies:
@@ -14,4 +14,4 @@
 - Free Trees (Darth-Artisan)
 
 #### APK FILE
-[final.apk](https://drive.google.com/file/d/1qsxSkG3fGzfwVvLRLNUE5twogLxlWQYg/view)
+[Towar PRE-ALPHA 0.9.apk](https://github.com/Bit-Wizards/CONUHacks/releases)
