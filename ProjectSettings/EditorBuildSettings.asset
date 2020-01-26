@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/CONUHacks/Scenes/Battlegrounds.unity
-    guid: 27655fea46c910b4eac9f433df5dd922
   - enabled: 1
     path: Assets/CONUHacks/Scenes/Level.unity
     guid: c9ef11e5c8996cc4193f39013569b847
