@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +25,7 @@ public class Soilder : MonoBehaviour
     {
         SetTeam();
         FindEnemyTeam();
+        health = 100; //inital health
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class Soilder : MonoBehaviour
     {
         GotoClosetEnemy(); //Goto Enemy
         CheckHealth();
+        Attack();
     }
 
     private void SetTeam()
@@ -57,11 +60,13 @@ public class Soilder : MonoBehaviour
 
     public GameObject FindClosestEnemy()
     {
+        
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
         foreach (GameObject enemy in enemyTeam)
         {
+            if (enemy == null) break;
             Vector3 diff = enemy.transform.position - position;
             float curDistance = diff.sqrMagnitude;
             if (curDistance < distance)
@@ -76,8 +81,15 @@ public class Soilder : MonoBehaviour
     private void GotoClosetEnemy()
     {
         float step = 0.1f * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, FindClosestEnemy().transform.position, step);
+        try
+        {
+            transform.position = Vector3.MoveTowards(transform.position, FindClosestEnemy().transform.position, step);
+        }catch(Exception e)
+        {
+            
+        }
     }
+
 
     void OnCollisionEnter(Collision collision)
     {
@@ -89,16 +101,30 @@ public class Soilder : MonoBehaviour
         }
     }
 
+
     void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag.Equals(enemyTeamPrefix))
         {
+
             //TODO: Attack Phase
             isAttacking = false;
         }
     }
 
+    private void Attack()
+    {
+        if (isAttacking)
+        {
+            float damageAmount = UnityEngine.Random.Range(50, 70);
+            targetedEnemy.GetComponent<Soilder>().RecieveDamage(damageAmount);
+        }
+    }
 
+    private void RecieveDamage(float damage)
+    {
+        health -= damage * Time.deltaTime;
+    }
 
     private void CheckHealth()
     {
