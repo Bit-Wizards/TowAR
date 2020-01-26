@@ -6,20 +6,22 @@ using UnityEngine;
 public class Soilder : MonoBehaviour
 {
 
-    private float health;
+    protected float health;
 
-    private bool dead;
+    protected bool dead;
+
+    protected float speed;
 
     GameObject[] enemyTeam;
-    string team;
-    string enemyTeamPrefix; //Blue or Red
-    string enemyTowerPrefix;
+    protected string team;
+    protected string enemyTeamPrefix; //Blue or Red
+    protected string enemyTowerPrefix;
 
-    bool isAttacking = false;
+    protected bool isAttacking = false;
 
-    bool seekNewTarget = false;
+    protected bool seekNewTarget = false;
 
-    private GameObject targetedEnemy;
+    protected GameObject targetedEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,7 @@ public class Soilder : MonoBehaviour
 
     void Awake()
     {
+        speed = 0.1f;
         SetTeam();
         FindEnemyTeam();
         dead = false;
@@ -41,7 +44,7 @@ public class Soilder : MonoBehaviour
     void Update()
     {
         FindEnemyTeam();
-        if (Time.time > nextActionTime && ! eneimiesDead)
+        if (Time.time > nextActionTime && !eneimiesDead)
         {
             nextActionTime += period;
             targetedEnemy = FindClosestEnemy();
@@ -71,7 +74,7 @@ public class Soilder : MonoBehaviour
         }
     }
 
-    private void SetTeam()
+    protected void SetTeam()
     {
         if (gameObject.tag.Equals("Blue_Team"))
         {
@@ -93,7 +96,7 @@ public class Soilder : MonoBehaviour
 
     bool eneimiesDead = false;
 
-    private void FindEnemyTeam()
+    protected void FindEnemyTeam()
     {
 
         enemyTeam = GameObject.FindGameObjectsWithTag(enemyTeamPrefix);
@@ -107,7 +110,7 @@ public class Soilder : MonoBehaviour
         }
     }
 
-    public GameObject FindClosestEnemy()
+    protected GameObject FindClosestEnemy()
     {
 
         GameObject closest = null;
@@ -129,19 +132,19 @@ public class Soilder : MonoBehaviour
 
 
 
-    private void GotoClosetEnemy()
+    protected void GotoClosetEnemy()
     {
-        if(FindClosestEnemy() != null)
+        if (FindClosestEnemy() != null)
         {
-            float step = 0.1f * Time.deltaTime;
+            float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, FindClosestEnemy().transform.position, step);
         }
-        
+
     }
 
-    private void GotoTarget()
+    protected void GotoTarget()
     {
-        float step = 0.1f * Time.deltaTime;
+        float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, targetedEnemy.transform.position, step);
     }
 
@@ -155,7 +158,7 @@ public class Soilder : MonoBehaviour
         }
     }
 
-    
+
     void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.Equals(targetedEnemy))
@@ -169,7 +172,7 @@ public class Soilder : MonoBehaviour
                 isAttacking = true;
             }
         }
-        
+
     }
 
 
@@ -183,7 +186,7 @@ public class Soilder : MonoBehaviour
         }
     }
 
-    private void Attack()
+    protected void Attack()
     {
         if (isAttacking)
         {
@@ -204,12 +207,12 @@ public class Soilder : MonoBehaviour
         }
     }
 
-    private void RecieveDamage(float damage)
+    protected void RecieveDamage(float damage)
     {
         health -= damage * Time.deltaTime;
     }
 
-    private void CheckHealth()
+    protected void CheckHealth()
     {
         if (health <= 0)
         {
@@ -220,7 +223,7 @@ public class Soilder : MonoBehaviour
         }
     }
 
-    private void LookForNewTarget()
+    protected void LookForNewTarget()
     {
         GameObject newTarget = FindClosestEnemy();
         if (newTarget.GetComponent<Soilder>().IsDead())
