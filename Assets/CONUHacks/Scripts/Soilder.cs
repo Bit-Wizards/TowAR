@@ -13,6 +13,7 @@ public class Soilder : MonoBehaviour
     GameObject[] enemyTeam;
     string team;
     string enemyTeamPrefix; //Blue or Red
+    string enemyTowerPrefix;
 
     bool isAttacking = false;
 
@@ -40,12 +41,17 @@ public class Soilder : MonoBehaviour
     void Update()
     {
         FindEnemyTeam();
-        if (Time.time > nextActionTime)
+        if (Time.time > nextActionTime && ! eneimiesDead)
         {
             nextActionTime += period;
             targetedEnemy = FindClosestEnemy();
         }
-        if (seekNewTarget)
+        if (eneimiesDead)
+        {
+            targetedEnemy = GameObject.FindGameObjectWithTag(enemyTowerPrefix);
+            GotoTarget();
+        }
+        else if (seekNewTarget)
         {
             LookForNewTarget();
         }
@@ -71,13 +77,13 @@ public class Soilder : MonoBehaviour
         {
             team = "Blue";
             enemyTeamPrefix = "Red_Team";
-            Debug.Log("Blue");
+            enemyTowerPrefix = "Red_Tower";
         }
         else if (gameObject.tag.Equals("Red_Team"))
         {
             team = "Red";
             enemyTeamPrefix = "Blue_Team";
-            Debug.Log("Red");
+            enemyTowerPrefix = "Blue_Tower";
         }
         else
         {
@@ -85,10 +91,20 @@ public class Soilder : MonoBehaviour
         }
     }
 
+    bool eneimiesDead = false;
+
     private void FindEnemyTeam()
     {
 
         enemyTeam = GameObject.FindGameObjectsWithTag(enemyTeamPrefix);
+        eneimiesDead = true;
+        foreach (GameObject enemy in enemyTeam)
+        {
+            if (!enemy.GetComponent<Soilder>().IsDead())
+            {
+                eneimiesDead = false;
+            }
+        }
     }
 
     public GameObject FindClosestEnemy()
@@ -144,8 +160,16 @@ public class Soilder : MonoBehaviour
     {
         if (collision.gameObject.Equals(targetedEnemy))
         {
-            isAttacking = true;
+            if (collision.gameObject.tag.Equals(enemyTowerPrefix))
+            {
+                collision.gameObject.GetComponent<EnemyTower>().ApplyDamage(5.0f);
+            }
+            else
+            {
+                isAttacking = true;
+            }
         }
+        
     }
 
 

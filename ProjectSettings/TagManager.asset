@@ -7,8 +7,8 @@ TagManager:
   - ManipulationSystem
   - Blue_Team
   - Red_Team
-  - Player_Tower
-  - Enemy_Tower
+  - Blue_Tower
+  - Red_Tower
   layers:
   - Default
   - TransparentFX

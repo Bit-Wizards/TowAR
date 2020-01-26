@@ -533,8 +533,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.4956956, y: 23.89036, z: 6.552617}
+  m_Size: {x: 11, y: 23.89036, z: 11}
   m_Center: {x: 0.2868491, y: 0, z: -0.5112685}
+--- !u!114 &8668567834729461999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178521036426070760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca499bf81e103964595ce7de360a496a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7614603133917097063
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,8 +650,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.4956956, y: 23.89036, z: 6.552617}
+  m_Size: {x: 11.19, y: 23.89036, z: 11}
   m_Center: {x: 0.2868491, y: 0, z: -0.5112685}
+--- !u!114 &5322082379479229692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352735850503201204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca499bf81e103964595ce7de360a496a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8423483049616415132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,7 +3431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 376db966d1adf234ca7d02119bee0463, type: 3}
       propertyPath: m_TagString
-      value: Player_Tower
+      value: Blue_Tower
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 376db966d1adf234ca7d02119bee0463, type: 3}
       propertyPath: m_LocalPosition.x
