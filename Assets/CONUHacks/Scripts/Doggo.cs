@@ -2,35 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Heavy : Soilder
+public class Doggo : Soilder
 {
-    // Start is called before the first frame update
-
-    // Update is called once per frame
-
-
-
-
-
-
     new void Awake()
     {
-        speed = 0.05f;
+        speed = 0.3f;
         SetTeam();
         FindEnemyTeam();
         dead = false;
-        health = 300; //inital health
+        health = 85; //inital health
 
     }
     new private void Attack()
     {
         if (isAttacking)
         {
-            float damageAmount = UnityEngine.Random.Range(100, 125);
+            float damageAmount = UnityEngine.Random.Range(50, 60);
             try
             {
-                targetedEnemy.GetComponent<Heavy>().RecieveDamage(damageAmount);
-                if (targetedEnemy.GetComponent<Heavy>().IsDead())
+                targetedEnemy.GetComponent<Doggo>().RecieveDamage(damageAmount);
+                if (targetedEnemy.GetComponent<Doggo>().IsDead())
                 {
                     isAttacking = false;
                     LookForNewTarget();
@@ -42,5 +33,4 @@ public class Heavy : Soilder
             }
         }
     }
-
 }
