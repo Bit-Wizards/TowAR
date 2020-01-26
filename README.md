@@ -4,7 +4,6 @@
 ## Dependencies:
 - Google ARcore 1.14 
 - Unity 2019.2.19f1
-- 
 
 ### Assets Used:
 - Dog Knight (Dungeon Masion)
